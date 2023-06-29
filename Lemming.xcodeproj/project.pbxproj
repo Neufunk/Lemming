@@ -7,18 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C87662EF2A4E0CE50071575D /* Lemmy-Swift-Client in Frameworks */ = {isa = PBXBuildFile; productRef = C87662EE2A4E0CE50071575D /* Lemmy-Swift-Client */; };
 		C8D67AC22A4D9E51008EE62C /* LemmingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D67AC12A4D9E51008EE62C /* LemmingApp.swift */; };
-		C8D67AC42A4D9E51008EE62C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D67AC32A4D9E51008EE62C /* ContentView.swift */; };
+		C8D67AC42A4D9E51008EE62C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D67AC32A4D9E51008EE62C /* LoginView.swift */; };
 		C8D67AC62A4D9E53008EE62C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8D67AC52A4D9E53008EE62C /* Assets.xcassets */; };
 		C8D67AC92A4D9E53008EE62C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8D67AC82A4D9E53008EE62C /* Preview Assets.xcassets */; };
+		C8D67CB22A4DC27B008EE62C /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D67CB12A4DC27B008EE62C /* LoginModel.swift */; };
+		C8D67CB62A4DE2CE008EE62C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D67CB52A4DE2CE008EE62C /* HomeView.swift */; };
+		C8D67CB82A4DE81B008EE62C /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D67CB72A4DE81B008EE62C /* FeedView.swift */; };
+		C8D67CBA2A4DE829008EE62C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D67CB92A4DE829008EE62C /* ProfileView.swift */; };
+		C8D67CBC2A4DE87E008EE62C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D67CBB2A4DE87E008EE62C /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C8D67ABE2A4D9E51008EE62C /* Lemming.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lemming.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8D67AC12A4D9E51008EE62C /* LemmingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LemmingApp.swift; sourceTree = "<group>"; };
-		C8D67AC32A4D9E51008EE62C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C8D67AC32A4D9E51008EE62C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		C8D67AC52A4D9E53008EE62C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C8D67AC82A4D9E53008EE62C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C8D67CB12A4DC27B008EE62C /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		C8D67CB52A4DE2CE008EE62C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		C8D67CB72A4DE81B008EE62C /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
+		C8D67CB92A4DE829008EE62C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		C8D67CBB2A4DE87E008EE62C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C87662EF2A4E0CE50071575D /* Lemmy-Swift-Client in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,8 +63,10 @@
 		C8D67AC02A4D9E51008EE62C /* Lemming */ = {
 			isa = PBXGroup;
 			children = (
+				C8D67AF12A4DBF9D008EE62C /* API */,
+				C8D67CB02A4DC265008EE62C /* Logic */,
+				C8D67ACF2A4D9E9C008EE62C /* View */,
 				C8D67AC12A4D9E51008EE62C /* LemmingApp.swift */,
-				C8D67AC32A4D9E51008EE62C /* ContentView.swift */,
 				C8D67AC52A4D9E53008EE62C /* Assets.xcassets */,
 				C8D67AC72A4D9E53008EE62C /* Preview Content */,
 			);
@@ -65,6 +79,33 @@
 				C8D67AC82A4D9E53008EE62C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C8D67ACF2A4D9E9C008EE62C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C8D67AC32A4D9E51008EE62C /* LoginView.swift */,
+				C8D67CB52A4DE2CE008EE62C /* HomeView.swift */,
+				C8D67CB72A4DE81B008EE62C /* FeedView.swift */,
+				C8D67CB92A4DE829008EE62C /* ProfileView.swift */,
+				C8D67CBB2A4DE87E008EE62C /* SettingsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C8D67AF12A4DBF9D008EE62C /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		C8D67CB02A4DC265008EE62C /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				C8D67CB12A4DC27B008EE62C /* LoginModel.swift */,
+			);
+			path = Logic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +124,9 @@
 			dependencies = (
 			);
 			name = Lemming;
+			packageProductDependencies = (
+				C87662EE2A4E0CE50071575D /* Lemmy-Swift-Client */,
+			);
 			productName = Lemming;
 			productReference = C8D67ABE2A4D9E51008EE62C /* Lemming.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +155,9 @@
 				Base,
 			);
 			mainGroup = C8D67AB52A4D9E51008EE62C;
+			packageReferences = (
+				C87662ED2A4E0CE50071575D /* XCRemoteSwiftPackageReference "Lemmy-Swift-Client" */,
+			);
 			productRefGroup = C8D67ABF2A4D9E51008EE62C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,7 +184,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8D67AC42A4D9E51008EE62C /* ContentView.swift in Sources */,
+				C8D67CB82A4DE81B008EE62C /* FeedView.swift in Sources */,
+				C8D67CBA2A4DE829008EE62C /* ProfileView.swift in Sources */,
+				C8D67CB62A4DE2CE008EE62C /* HomeView.swift in Sources */,
+				C8D67CBC2A4DE87E008EE62C /* SettingsView.swift in Sources */,
+				C8D67AC42A4D9E51008EE62C /* LoginView.swift in Sources */,
+				C8D67CB22A4DC27B008EE62C /* LoginModel.swift in Sources */,
 				C8D67AC22A4D9E51008EE62C /* LemmingApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,6 +391,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C87662ED2A4E0CE50071575D /* XCRemoteSwiftPackageReference "Lemmy-Swift-Client" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rrainn/Lemmy-Swift-Client";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C87662EE2A4E0CE50071575D /* Lemmy-Swift-Client */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C87662ED2A4E0CE50071575D /* XCRemoteSwiftPackageReference "Lemmy-Swift-Client" */;
+			productName = "Lemmy-Swift-Client";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C8D67AB62A4D9E51008EE62C /* Project object */;
 }

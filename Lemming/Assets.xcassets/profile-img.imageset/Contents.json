@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "png-transparent-profile-logo-computer-icons-user-user-blue-heroes-logo-thumbnail.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
