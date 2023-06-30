@@ -7,16 +7,20 @@
 
 import Foundation
 import SwiftUI
+import KeychainAccess
 
-struct LoginView: View {
+struct Login_View: View {
     
-    @State var username = ""
-    @State var password = ""
-    @State var instance = "lemmy.world"
+    @State var username = "Neuf"
+    @State var password = "Test15243="
+    @State var instance = "enterprise.lemmy.ml"
     @State var isAuthenticated: Bool = false
+    private let keychain = Keychain(service: "com.johnathan.Lemming")
     
     var body: some View {
-        if isAuthenticated {
+        if let jwt = keychain["JWT"], !jwt.isEmpty {
+            HomeView()
+        } else if isAuthenticated {
             HomeView()
         } else {
             VStack() {
@@ -31,7 +35,7 @@ struct LoginView: View {
                     .padding(.bottom, 50)
                     .shadow(radius: 6.0, x: 10, y: 10)
                 
-                Image("lemmy_logo")
+                Image("lemming-logo")
                     .resizable()
                     .frame(width: 200, height: 200)
                     .clipShape(Circle())
@@ -61,6 +65,7 @@ struct LoginView: View {
                     TextField("Instance", text: $instance)
                         .autocapitalization(.none)
                         .disableAutocorrection(true)
+                        .foregroundColor(.black)
                         .padding()
                         .background(Color(.white))
                         .cornerRadius(25.0)
@@ -77,7 +82,7 @@ struct LoginView: View {
                 Button(action: {
                     Task {
                         let success = await
-                        LoginModel().login(user: username, passwd: password, instance: instance)
+                        Authentication().login(user: username, passwd: password, instance: instance)
                         if success {
                             isAuthenticated = true
                         }
@@ -88,7 +93,7 @@ struct LoginView: View {
                         .foregroundColor(.white)
                         .padding()
                         .frame(width: 200, height: 60)
-                        .background(Color(.purple))
+                        .background(Color(.blue))
                         .cornerRadius(20.0)
                         .shadow(radius: 10.0, x: 20, y: 10)
                 }.padding(.top, 50)
@@ -104,7 +109,7 @@ struct LoginView: View {
                 }
             }
             .background(
-                LinearGradient(gradient: Gradient(colors: [Color("Login_background_1"), Color(.orange)]), startPoint: .top, endPoint: .bottom)
+                LinearGradient(gradient: Gradient(colors: [.blue, .white]), startPoint: .topLeading, endPoint: .bottomTrailing)
                     .edgesIgnoringSafeArea(.all))
         }
     }
@@ -113,6 +118,6 @@ struct LoginView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        Login_View()
     }
 }

@@ -7,25 +7,35 @@
 
 import Foundation
 import Lemmy_Swift_Client
+import KeychainAccess
 
-class LoginModel {
+class Authentication {
+    
+    public let keychain = Keychain(service: "com.johnathan.Lemming")
     
     public func login(user: String, passwd: String, instance: String) async -> Bool {
         var success = false
         if let url = URL(string: "https://" + instance + "/api/v3") {
-            // Create an instance of the Lemmy API with the base URL of your Lemmy instance
             let api = LemmyAPI(baseUrl: url)
-            // Create a SearchRequest object with the `q` parameter
             let request = LoginRequest(username_or_email: user, password: passwd)
-            // Send the request to the Lemmy API
             if let response = try? await api.request(request) {
-                print(response.jwt)
+                keychain["JWT"] = response.jwt
+                print("!!! KEY ADDED TO KEYCHAIN !!!")
                 success = true
             } else {
-                print("Error")
+                success = false
             }
         }
-        print(success)
         return success
-    } 
+    }
+    
+    public func logout() {
+        do {
+            try keychain.removeAll()
+            print("!!! ALL KEY REMOVED FROM KEYCHAIN !!!")
+        } catch {
+            print("Error removing Keys")
+        }
+    }
+
 }

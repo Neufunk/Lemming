@@ -11,7 +11,7 @@ import SwiftUI
 struct LemmingApp: App {
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            Login_View()
         }
     }
 }
